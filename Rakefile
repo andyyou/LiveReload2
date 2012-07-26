@@ -3,8 +3,8 @@
 
 require 'rake/clean'
 
-Dir['tasks/*.rb'].each { |file| require file }
-Dir['nodeapp/*/tasks/*.rb'].each { |file| require file }
+Dir['tasks/*.rb'].each { |file| load file }
+Dir['nodeapp/*/tasks/*.rb'].each { |file| load file }
 
 MacVersion = VersionTasks.new('ver:mac', 'app/mac/Info.plist', %w(app/mac/src/app_version.h))
 
